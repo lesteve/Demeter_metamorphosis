@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>demeter.utils.reproducing_kernels API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>demeter.utils.reproducing_kernels</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="demeter.utils.reproducing_kernels.fft_filter"><code class="name flex">
+<span>def <span class="ident">fft_filter</span></span>(<span>input: torch.Tensor, kernel: torch.Tensor, border_type: str = 'reflect', normalized: bool = False) ‑> torch.Tensor</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function that convolves a tensor with a kernel. This function is almost
+the function filter2d from kornia, adapted to work with 2d and 3d tensors.</p>
+<p>The function applies a given kernel to a tensor. The kernel is applied
+independently at each depth channel of the tensor. Before applying the
+kernel, the function applies padding according to the specified mode so
+that the output remains in the same shape.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input</code></strong> :&ensp;<code>torch.Tensor</code></dt>
+<dd>the input tensor with shape of
+:math:<code>(B, C, H, W)</code> or :math:<code>(B, C, D, H, W)</code></dd>
+<dt><strong><code>kernel</code></strong> :&ensp;<code>torch.Tensor</code></dt>
+<dd>the kernel to be convolved with the input
+tensor. The kernel shape must be :math:<code>(1, kH, kW)</code> or :math:<code>(1, kD, kH, kW)</code>.</dd>
+<dt><strong><code>border_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>the padding mode to be applied before convolving.
+The expected modes are: <code>'constant'</code>, <code>'reflect'</code>,
+<code>'replicate'</code> or <code>'circular'</code>. Default: <code>'reflect'</code>.</dd>
+<dt><strong><code>normalized</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If True, kernel will be L1 normalized.</dd>
+</dl>
+<h2 id="return">Return</h2>
+<p>torch.Tensor: the convolved tensor of same size and numbers of channels
+as the input.</p></div>
+</dd>
+<dt id="demeter.utils.reproducing_kernels.get_gaussian_kernel3d"><code class="name flex">
+<span>def <span class="ident">get_gaussian_kernel3d</span></span>(<span>kernel_size, sigma)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="demeter.utils.reproducing_kernels.GaussianRKHS"><code class="flex name class">
+<span>class <span class="ident">GaussianRKHS</span></span>
+<span>(</span><span>sigma: Tuple, border_type: str = 'replicate', device='cpu')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is equivalent to a gaussian blur. This function support 2d and 3d images in the
+PyTorch convention</p>
+<p>Args :</p>
+<pre><code>border_type (str): the padding mode to be applied before convolving.
+  The expected modes are: ``'constant'``, ``'reflect'``,
+  ``'replicate'`` or ``'circular'``. Default: ``'reflect'``.
+normalized (bool): If True, kernel will be L1 normalized.
+</code></pre>
+<h2 id="return">Return</h2>
+<p>torch.Tensor: the convolved tensor of same size and numbers of channels
+as the input.</p>
+<p>Test</p>
+<h1 id="import-matplotlibpyplot-as-plt">#import matplotlib.pyplot as plt</h1>
+<h1 id="import-numpy-as-np">import numpy as np</h1>
+<h1 id="import-nibabel-as-nib">import nibabel as nib</h1>
+<h1 id="import-image_3d_visualisation-as-iv3">import image_3d_visualisation as iv3</h1>
+<h1 id="import-reproducing_kernels-as-rkhs">import reproducing_kernels as rkhs</h1>
+<h1 id="import-torch">import torch</h1>
+<h1 id="_1"></h1>
+<h1 id="matplotlib-qt">%matplotlib qt</h1>
+<h1 id="irm_type-flair">irm_type = 'flair'</h1>
+<h1 id="folder_name-brats18_cbica_apy_1">folder_name = 'Brats18_CBICA_APY_1'</h1>
+<h1 id="img-nibloadroot_directorydatabratsfolder_namefolder_name_irm_typeniigz">img = nib.load(ROOT_DIRECTORY+'/../data/brats/'+folder_name+'/'+folder_name+'_'+irm_type+'.nii.gz')</h1>
+<h1 id="imgaffine"># img.affine</h1>
+<h1 id="img_data-torchtensorimgget_fdatanonenone">img_data = torch.Tensor(img.get_fdata())[None,None]</h1>
+<h1 id="sigma-355">sigma = (3,5,5)</h1>
+<h1 id="img_data-torchtensorimgget_fdata125nonenone"># img_data = torch.Tensor(img.get_fdata()[125])[None,None]</h1>
+<h1 id="sigma-55"># sigma = (5,5)</h1>
+<h1 id="blured-rkhsgaussianrkhssigmaimg_data">blured = rkhs.GaussianRKHS(sigma)(img_data)</h1>
+<h1 id="figax-pltsubplots12"># fig,ax = plt.subplots(1,2)</h1>
+<h1 id="ax0imshowimg_data00"># ax[0].imshow(img_data[0,0])</h1>
+<h1 id="ax1imshowblured00"># ax[1].imshow(blured[0,0])</h1>
+<h1 id="iv3imshow_3d_sliderimg_data">iv3.imshow_3d_slider(img_data)</h1>
+<h1 id="iv3imshow_3d_sliderblured">iv3.imshow_3d_slider(blured)</h1>
+<p>:param sigma: (Tuple[float,float] or [float,float,float])
+:border_type: the padding mode to be applied before convolving.
+The expected modes are: <code>'constant'</code>,
+<code>'replicate'</code> or <code>'circular'</code>.
+the <code>'reflect'</code> one is not implemented yet by pytorch</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GaussianRKHS(torch.nn.Module):
+    &#34;&#34;&#34; Is equivalent to a gaussian blur. This function support 2d and 3d images in the
+    PyTorch convention
+
+    Args :
+
+
+        border_type (str): the padding mode to be applied before convolving.
+          The expected modes are: ``&#39;constant&#39;``, ``&#39;reflect&#39;``,
+          ``&#39;replicate&#39;`` or ``&#39;circular&#39;``. Default: ``&#39;reflect&#39;``.
+        normalized (bool): If True, kernel will be L1 normalized.
+
+    Return:
+        torch.Tensor: the convolved tensor of same size and numbers of channels
+        as the input.
+
+    Test
+    # #import matplotlib.pyplot as plt
+    # import numpy as np
+    # import nibabel as nib
+    # import image_3d_visualisation as iv3
+    # import reproducing_kernels as rkhs
+    # import torch
+    #
+    # %matplotlib qt
+    # irm_type = &#39;flair&#39;
+    # folder_name = &#39;Brats18_CBICA_APY_1&#39;
+    # img = nib.load(ROOT_DIRECTORY+&#39;/../data/brats/&#39;+folder_name+&#39;/&#39;+folder_name+&#39;_&#39;+irm_type+&#39;.nii.gz&#39;)
+    # # img.affine
+    # img_data = torch.Tensor(img.get_fdata())[None,None]
+    # sigma = (3,5,5)
+    # # img_data = torch.Tensor(img.get_fdata()[125])[None,None]
+    # # sigma = (5,5)
+    # blured = rkhs.GaussianRKHS(sigma)(img_data)
+    # # fig,ax = plt.subplots(1,2)
+    # # ax[0].imshow(img_data[0,0])
+    # # ax[1].imshow(blured[0,0])
+    # iv3.imshow_3d_slider(img_data)
+    # iv3.imshow_3d_slider(blured)
+    &#34;&#34;&#34;
+    def __init__(self,sigma : Tuple,
+                 border_type: str = &#39;replicate&#39;,
+                 device = &#39;cpu&#39;):
+        &#34;&#34;&#34;
+
+        :param sigma: (Tuple[float,float] or [float,float,float])
+        :border_type: the padding mode to be applied before convolving.
+          The expected modes are: ``&#39;constant&#39;``,
+          ``&#39;replicate&#39;`` or ``&#39;circular&#39;``.
+          the ``&#39;reflect&#39;`` one is not implemented yet by pytorch
+        &#34;&#34;&#34;
+        big_odd = lambda val : max(6,int(val*6)) + (1 - max(6,int(val*6)) %2)
+        kernel_size = tuple([big_odd(s) for s in sigma])
+        self.sigma = sigma
+        super().__init__()
+        self._dim = len(sigma)
+        if self._dim == 2:
+            self.kernel = kornia.filters.get_gaussian_kernel2d(kernel_size,sigma)#[None]
+            self.kernel *= prod(sigma)
+            self.filter = flt.filter2d
+        elif self._dim == 3:
+            self.kernel = get_gaussian_kernel3d(kernel_size,sigma)#[None]
+            self.kernel *= prod(sigma)
+            # self.filter = flt.filter3d
+            self.filter = fft_filter
+        else:
+            raise ValueError(&#34;Sigma is expected to be a tuple of size 2 or 3 same as the input dimension,&#34;
+                             +&#34;len(sigma) == {}&#34;.format(len(sigma)))
+        self.border_type = border_type
+
+        # TODO : define better the condition for using the fft filter
+        # this filter works in 2d and 3d
+        if max(kernel_size) &gt; 7:
+            self.filter = fft_filter
+        # print(f&#34;filter used : {self.filter}&#34;)
+
+    def __repr__(self) -&gt; str:
+        # the if is there for compatibilities with older versions
+        sig_str= f&#39;sigma :{self.sigma}&#39; if hasattr(self,&#39;sigma&#39;) else &#39;&#39;
+        return self.__class__.__name__+\
+        &#39;,&#39;+str(self._dim)+&#39;D &#39;+\
+        f&#39;filter :{self.filter.__name__}, &#39;+sig_str
+
+    def forward(self, input: torch.Tensor):
+        &#34;&#34;&#34;
+
+        :param input: (torch.Tensor): the input tensor with shape of
+          :math:`(B, C, H, W)` or :math:`(B, C, D, H, W)`
+        :return:
+        &#34;&#34;&#34;
+        if (self._dim == 2 and len(input.shape) == 4) or (self._dim == 3 and len(input.shape) == 5):
+            return self.filter(input,self.kernel,self.border_type)
+        else:
+            raise ValueError(f&#34;{self.__class__.__name__} was initialized &#34;
+                             f&#34;with a {self._dim}D mask and input shape is : &#34;
+                             f&#34;{input.shape}&#34;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="demeter.utils.reproducing_kernels.GaussianRKHS2d" href="#demeter.utils.reproducing_kernels.GaussianRKHS2d">GaussianRKHS2d</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="demeter.utils.reproducing_kernels.GaussianRKHS.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, input: torch.Tensor) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:param input: (torch.Tensor): the input tensor with shape of
+:math:<code>(B, C, H, W)</code> or :math:<code>(B, C, D, H, W)</code>
+:return:</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="demeter.utils.reproducing_kernels.GaussianRKHS2d"><code class="flex name class">
+<span>class <span class="ident">GaussianRKHS2d</span></span>
+<span>(</span><span>sigma: Tuple[float, float], border_type: str = 'reflect')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Is equivalent to a gaussian blur. This function support 2d and 3d images in the
+PyTorch convention</p>
+<p>Args :</p>
+<pre><code>border_type (str): the padding mode to be applied before convolving.
+  The expected modes are: ``'constant'``, ``'reflect'``,
+  ``'replicate'`` or ``'circular'``. Default: ``'reflect'``.
+normalized (bool): If True, kernel will be L1 normalized.
+</code></pre>
+<h2 id="return">Return</h2>
+<p>torch.Tensor: the convolved tensor of same size and numbers of channels
+as the input.</p>
+<p>Test</p>
+<h1 id="import-matplotlibpyplot-as-plt">#import matplotlib.pyplot as plt</h1>
+<h1 id="import-numpy-as-np">import numpy as np</h1>
+<h1 id="import-nibabel-as-nib">import nibabel as nib</h1>
+<h1 id="import-image_3d_visualisation-as-iv3">import image_3d_visualisation as iv3</h1>
+<h1 id="import-reproducing_kernels-as-rkhs">import reproducing_kernels as rkhs</h1>
+<h1 id="import-torch">import torch</h1>
+<h1 id="_1"></h1>
+<h1 id="matplotlib-qt">%matplotlib qt</h1>
+<h1 id="irm_type-flair">irm_type = 'flair'</h1>
+<h1 id="folder_name-brats18_cbica_apy_1">folder_name = 'Brats18_CBICA_APY_1'</h1>
+<h1 id="img-nibloadroot_directorydatabratsfolder_namefolder_name_irm_typeniigz">img = nib.load(ROOT_DIRECTORY+'/../data/brats/'+folder_name+'/'+folder_name+'_'+irm_type+'.nii.gz')</h1>
+<h1 id="imgaffine"># img.affine</h1>
+<h1 id="img_data-torchtensorimgget_fdatanonenone">img_data = torch.Tensor(img.get_fdata())[None,None]</h1>
+<h1 id="sigma-355">sigma = (3,5,5)</h1>
+<h1 id="img_data-torchtensorimgget_fdata125nonenone"># img_data = torch.Tensor(img.get_fdata()[125])[None,None]</h1>
+<h1 id="sigma-55"># sigma = (5,5)</h1>
+<h1 id="blured-rkhsgaussianrkhssigmaimg_data">blured = rkhs.GaussianRKHS(sigma)(img_data)</h1>
+<h1 id="figax-pltsubplots12"># fig,ax = plt.subplots(1,2)</h1>
+<h1 id="ax0imshowimg_data00"># ax[0].imshow(img_data[0,0])</h1>
+<h1 id="ax1imshowblured00"># ax[1].imshow(blured[0,0])</h1>
+<h1 id="iv3imshow_3d_sliderimg_data">iv3.imshow_3d_slider(img_data)</h1>
+<h1 id="iv3imshow_3d_sliderblured">iv3.imshow_3d_slider(blured)</h1></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@deprecated(&#34;Please use GaussianRKHS instead.&#34;)
+class GaussianRKHS2d(GaussianRKHS):
+
+    def __init__(self,
+                 sigma: Tuple[float, float],
+                 border_type: str = &#39;reflect&#39;) -&gt; None:
+
+        super(GaussianRKHS2d, self).__init__(sigma,border_type)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="demeter.utils.reproducing_kernels.GaussianRKHS" href="#demeter.utils.reproducing_kernels.GaussianRKHS">GaussianRKHS</a></li>
+<li>torch.nn.modules.module.Module</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="demeter.utils.reproducing_kernels.GaussianRKHS" href="#demeter.utils.reproducing_kernels.GaussianRKHS">GaussianRKHS</a></b></code>:
+<ul class="hlist">
+<li><code><a title="demeter.utils.reproducing_kernels.GaussianRKHS.forward" href="#demeter.utils.reproducing_kernels.GaussianRKHS.forward">forward</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS"><code class="flex name class">
+<span>class <span class="ident">Multi_scale_GaussianRKHS</span></span>
+<span>(</span><span>list_sigmas)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes::</p>
+<pre><code>import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+</code></pre>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call :meth:<code>to</code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code>__init__()</code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<p>:ivar training: Boolean represents whether this module is in training or
+evaluation mode.
+:vartype training: bool</p>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Multi_scale_GaussianRKHS(torch.nn.Module):
+
+    def __init__(self, list_sigmas):
+        if isinstance(list_sigmas,tuple):
+            raise ValueError(&#34;List sigma must be a list of tuple, if you want to use &#34;
+                             &#34;a single scale Gaussian RKHS please use the class &#34;
+                             &#34;GaussianRKHS instead.&#34;)
+        super(Multi_scale_GaussianRKHS, self).__init__()
+        _ks = []
+        for sigma in list_sigmas:
+            big_odd = lambda val : max(6,int(val*6)) + (1 - max(6,int(val*6)) %2)
+            kernel_size = tuple([big_odd(s) for s in sigma])
+            _ks.append(kernel_size)
+        # Get the max of each dimension.
+        self._dim = len(kernel_size)
+        kernel_size = tuple([
+            max([s[i] for s in _ks ]) for i in range(self._dim)
+        ])
+        self.list_sigma = list_sigmas
+
+        if self._dim == 2:
+            kernel_f = kornia.filters.get_gaussian_kernel2d
+            self.filter = fft_filter if max(kernel_size) &gt; 7 else flt.filter2d
+        elif self._dim == 3:
+            kernel_f = get_gaussian_kernel3d
+            self.filter = fft_filter
+        else:
+            raise ValueError(&#34;Sigma is expected to be a tuple of size 2 or 3 same as the input dimension,&#34;
+                             +&#34;len(sigma[0]) == {}&#34;.format(len(list_sigmas[0])))
+
+        self.kernel = torch.cat(
+            [ prod(sigma)*kernel_f(kernel_size,sigma)[None] for sigma in list_sigmas ]
+        ).sum(dim=0)#[None]
+        self.kernel /= len(list_sigmas)
+        self.border_type = &#39;constant&#39;
+
+    def __repr__(self) -&gt; str:
+        # the if is there for compatibilities with older versions
+        return self.__class__.__name__+\
+                f&#39;(sigma :{self.list_sigma})&#39;
+        # f&#39;filter :{self.filter.__name__}, &#39;+sig_str
+        # &#39;,&#39;+str(self._dim)+&#39;D &#39;+\
+
+    def __call__(self, input : torch.Tensor):
+        if (self._dim == 2 and len(input.shape) == 4) or (self._dim == 3 and len(input.shape) == 5):
+            return self.filter(input,self.kernel,self.border_type)
+        else:
+            raise ValueError(f&#34;{self.__class__.__name__} was initialized &#34;
+                             f&#34;with a {self._dim}D mask and input shape is : &#34;
+                             f&#34;{input.shape}&#34;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+</dd>
+<dt id="demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS_notAverage"><code class="flex name class">
+<span>class <span class="ident">Multi_scale_GaussianRKHS_notAverage</span></span>
+<span>(</span><span>list_sigmas)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing to nest them in
+a tree structure. You can assign the submodules as regular attributes::</p>
+<pre><code>import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+</code></pre>
+<p>Submodules assigned in this way will be registered, and will have their
+parameters converted too when you call :meth:<code>to</code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code>__init__()</code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<p>:ivar training: Boolean represents whether this module is in training or
+evaluation mode.
+:vartype training: bool</p>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Multi_scale_GaussianRKHS_notAverage(torch.nn.Module):
+
+    def __init__(self, list_sigmas):
+        if isinstance(list_sigmas,tuple):
+            raise ValueError(&#34;List sigma must be a list of tuple, if you want to use &#34;
+                             &#34;a single scale Gaussian RKHS please use the class &#34;
+                             &#34;GaussianRKHS instead.&#34;)
+        super(Multi_scale_GaussianRKHS_notAverage, self).__init__()
+
+        self.gauss_list = []
+        for sigma in list_sigmas:
+            self.gauss_list.append(GaussianRKHS(sigma))
+
+
+
+    def __repr__(self) -&gt; str:
+        # the if is there for compatibilities with older versions
+        return self.__class__.__name__+\
+                f&#39;(sigma :{self.list_sigma})&#39;
+        # f&#39;filter :{self.filter.__name__}, &#39;+sig_str
+        # &#39;,&#39;+str(self._dim)+&#39;D &#39;+\
+
+    def __call__(self, input : torch.Tensor):
+        output = torch.zeros(input.shape,device=input.device)
+        for gauss_rkhs in self.gauss_list:
+            output += gauss_rkhs(input)/len(self.gauss_list)
+        return output</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="demeter.utils" href="index.html">demeter.utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="demeter.utils.reproducing_kernels.fft_filter" href="#demeter.utils.reproducing_kernels.fft_filter">fft_filter</a></code></li>
+<li><code><a title="demeter.utils.reproducing_kernels.get_gaussian_kernel3d" href="#demeter.utils.reproducing_kernels.get_gaussian_kernel3d">get_gaussian_kernel3d</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="demeter.utils.reproducing_kernels.GaussianRKHS" href="#demeter.utils.reproducing_kernels.GaussianRKHS">GaussianRKHS</a></code></h4>
+<ul class="">
+<li><code><a title="demeter.utils.reproducing_kernels.GaussianRKHS.forward" href="#demeter.utils.reproducing_kernels.GaussianRKHS.forward">forward</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="demeter.utils.reproducing_kernels.GaussianRKHS2d" href="#demeter.utils.reproducing_kernels.GaussianRKHS2d">GaussianRKHS2d</a></code></h4>
+</li>
+<li>
+<h4><code><a title="demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS" href="#demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS">Multi_scale_GaussianRKHS</a></code></h4>
+</li>
+<li>
+<h4><code><a title="demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS_notAverage" href="#demeter.utils.reproducing_kernels.Multi_scale_GaussianRKHS_notAverage">Multi_scale_GaussianRKHS_notAverage</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

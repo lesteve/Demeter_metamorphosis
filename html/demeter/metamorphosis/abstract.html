@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>demeter.metamorphosis.abstract API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>demeter.metamorphosis.abstract</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator"><code class="flex name class">
+<span>class <span class="ident">Geodesic_integrator</span></span>
+<span>(</span><span>sigma_v, multiScale_average=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Abstract class for defining the way of integrating over geodesics</p>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Geodesic_integrator(torch.nn.Module,ABC):
+    &#34;&#34;&#34; Abstract class for defining the way of integrating over geodesics
+
+    &#34;&#34;&#34;
+    @abstractmethod
+    def __init__(self,sigma_v,multiScale_average= False):
+        super().__init__()
+        self._force_save = False
+
+        if isinstance(sigma_v,tuple):
+            self.sigma_v = sigma_v# is used if the optmisation is later saved
+            self.kernelOperator = rk.GaussianRKHS(sigma_v,
+                                                     border_type=&#39;constant&#39;)
+        elif isinstance(sigma_v,list):
+            self.sigma_v = sigma_v
+            if multiScale_average:
+                self.kernelOperator = rk.Multi_scale_GaussianRKHS_notAverage(sigma_v)
+            else:
+                self.kernelOperator = rk.Multi_scale_GaussianRKHS(sigma_v)
+        else:
+            ValueError(&#34;Something went wrong with sigma_v&#34;)
+        # self.border_effect = border_effect
+        # self._init_sharp_()
+
+    def _init_sharp_(self,sharp):
+        # print(f&#39;sharp = {sharp}&#39;)
+        if sharp is None:
+            try:
+                sharp = self.flag_sharp
+            except AttributeError:
+                sharp = False
+        if not sharp:
+            self.flag_sharp = False
+            return 0
+        if self.__class__.__name__ == &#39;Metamorphosis_path&#39;:
+            self.step = self._step_sharp_semiLagrangian
+        self.flag_sharp = True
+        self.save = True
+        self._force_save = True
+        self._phis = [[None]*i for i in range(1,self.n_step+1)]
+        self._resi_deform = []
+
+    @abstractmethod
+    def step(self):
+        pass
+
+    @abstractmethod
+    def _get_mu_(self):
+        pass
+
+    def forward(self, image, momentum_ini,
+                field_ini=None,
+                save=True,
+                plot =0,
+                t_max = 1,
+                verbose=False,
+                sharp=None,
+                debug= False):
+        r&#34;&#34;&#34; This method is doing the temporal loop using the good method `_step_`
+
+        :param image: (tensor array) of shape [1,1,H,W]. Source image ($I_0$)
+        :param field_ini: to be deprecated, field_ini is id_grid
+        :param momentum_ini: (tensor array) of shape [H,W]. note that for images
+        the momentum is equal to the residual ($p = z$)
+        :param save: (bool) option to save the integration intermediary steps.
+        :param plot: (int) positive int lower than `self.n_step` to plot the indicated
+                         number of intemediary steps. (if plot&gt;0, save is set to True)
+
+        &#34;&#34;&#34;
+        if len(momentum_ini.shape) not in [4, 5]:
+            raise ValueError(f&#34;residual_ini must be of shape [B,C,H,W] or [B,C,D,H,W] got {momentum_ini.shape}&#34;)
+        device = momentum_ini.device
+        # print(f&#39;sharp = {sharp} flag_sharp : {self.flag_sharp},{self._phis}&#39;)
+        self._init_sharp_(sharp)
+        self.source = image.detach()
+        self.image = image.clone().to(device)
+        self.momentum = momentum_ini
+        self.debug = debug
+        try:
+            self.save = True if self._force_save else save
+        except AttributeError:
+            self.save = save
+
+        self.id_grid = tb.make_regular_grid(momentum_ini.shape[2:], device=device)
+        assert self.id_grid != None
+
+        if field_ini is None:
+            self.field = self.id_grid.clone()
+        else:
+            self.field = field_ini #/self.n_step
+
+        if plot &gt; 0:
+            self.save = True
+
+        if self.save:
+            self.image_stock = torch.zeros((t_max*self.n_step,)+image.shape[1:])
+            self.field_stock = torch.zeros((t_max*self.n_step,)+self.field.shape[1:])
+            self.momentum_stock = torch.zeros((t_max * self.n_step,) + momentum_ini.shape[1:])
+
+        for i,t in enumerate(torch.linspace(0,t_max,t_max*self.n_step)):
+            self._i = i
+
+            _,field_to_stock,residuals_dt = self.step()
+
+            if self.image.isnan().any() or self.momentum.isnan().any():
+                raise OverflowError(&#34;Some nan where produced ! the integration diverged&#34;,
+                                    &#34;changing the parameters is needed (increasing n_step can help) &#34;)
+
+            if self.save:
+                self.image_stock[i] = self.image[0].detach().to(&#39;cpu&#39;)
+                self.field_stock[i] = field_to_stock[0].detach().to(&#39;cpu&#39;)
+                self.momentum_stock[i] = residuals_dt.detach().to(&#39;cpu&#39;)
+
+            if verbose:
+                update_progress(i/(t_max*self.n_step))
+
+        # try:
+        #     _d_ = device if self._force_save else &#39;cpu&#39;
+        #     self.field_stock = self.field_stock.to(device)
+        # except AttributeError: pass
+
+        if plot&gt;0:
+            self.plot(n_figs=plot)
+
+    def _image_Eulerian_integrator_(self,image,vector_field,t_max,n_step):
+        &#34;&#34;&#34; image integrator using an Eulerian scheme
+
+        :param image: (tensor array) of shape [T,1,H,W]
+        :param vector_field: (tensor array) of shape [T,H,W,2]
+        :param t_max: (float) the integration will be made on [0,t_max]
+        :param n_step: (int) number of time steps in between [0,t_max]
+
+        :return: (tensor array) of shape [T,1,H,W] integrated with vector_field
+        &#34;&#34;&#34;
+        dt = t_max/n_step
+        for t in torch.linspace(0,t_max,n_step):
+            grad_I = tb.spacialGradient(image,dx_convention=&#39;pixel&#39;)
+            grad_I_scalar_v = (grad_I[0]*tb.grid2im(vector_field)).sum(dim=1)
+            image = image - grad_I_scalar_v * dt
+        return image
+
+    def _compute_vectorField_(self, momentum, grad_image):
+        r&#34;&#34;&#34; operate the equation $K \star (z_t \cdot \nabla I_t)$
+
+        :param momentum: (tensor array) of shape [H,W] or [D,H,W]
+        :param grad_image: (tensor array) of shape [B,C,2,H,W] or [B,C,3,D,H,W]
+        :return: (tensor array) of shape [B,H,W,2]
+        &#34;&#34;&#34;
+        # C = residuals.shape[1]
+        return tb.im2grid(self.kernelOperator((-(momentum.unsqueeze(2) * grad_image).sum(dim=1))))
+
+    def _compute_vectorField_multimodal_(self, momentum, grad_image):
+        r&#34;&#34;&#34; operate the equation $K \star (z_t \cdot \nabla I_t)$
+
+        :param momentum: (tensor array) of shape [B,C,H,W] or [B,C,D,H,W]
+        :param grad_image: (tensor array) of shape [B,C,2,H,W] or [B,C,3,D,H,W]
+        :return: (tensor array) of shape [B,H,W,2]
+        &#34;&#34;&#34;
+        wheigths = self.channel_weight.to(momentum.device)
+        W = wheigths.sum()
+        # ic(residuals.shape,self.channel_weight.shape)
+        return tb.im2grid(self.kernelOperator((
+                -((wheigths * momentum).unsqueeze(2) * grad_image
+                  ).sum(dim=1)
+                # / W
+        ))) # PAS OUF SI BATCH
+
+    def _update_field_multimodal_(self):
+        grad_image = tb.spacialGradient(self.image,dx_convention=&#39;pixel&#39;)
+        self.field = self._compute_vectorField_multimodal_(self.momentum, grad_image)
+        self.field *= self._field_cst_mult()
+
+    def _field_cst_mult(self):
+        if self._get_mu_() == 0:
+            return 1
+        else:
+            return self._get_rho_()/self._get_mu_()
+
+    def _update_field_(self):
+        grad_image = tb.spacialGradient(self.image,dx_convention=&#39;pixel&#39;)
+        self.field = self._compute_vectorField_(self.momentum, grad_image)
+        self.field *= self._field_cst_mult()
+
+    def _update_residuals_Eulerian_(self):
+        residuals_dt = - tb.Field_divergence(dx_convention=&#39;pixel&#39;)(
+            self.momentum[0,0][None, :, :, None] * self.field,
+                            )
+
+        self.momentum = self.momentum + residuals_dt / self.n_step
+
+    def _update_residuals_semiLagrangian_(self,deformation):
+        div_v_times_z = self.momentum * tb.Field_divergence(dx_convention=&#39;pixel&#39;)(self.field)[0,0]
+
+        self.momentum = tb.imgDeform(self.momentum,
+                                     deformation,
+                                     dx_convention=&#39;pixel&#39;,
+                                     clamp=False) \
+                        - div_v_times_z / self.n_step
+
+    def _compute_sharp_intermediary_residuals_(self):
+        device = self.momentum.device
+        resi_cumul = torch.zeros(self.momentum.shape, device=device)
+        # for k,phi in enumerate(self._phis[self._i][:]):
+        for k,phi in enumerate(self._phis[self._i][1:]):
+            resi_cumul += tb.imgDeform(self.momentum_stock[k][None].to(device),
+                                       phi,
+                                       dx_convention=&#39;pixel&#39;,
+                                       clamp=False)
+        resi_cumul = resi_cumul + self.momentum
+        return resi_cumul
+        # Non sharp but working residual
+        # if self._i &gt;0:
+        #     for k,z in enumerate(self._resi_deform):
+        #         self._resi_deform[k] = tb.imgDeform(z[None,None].to(device),
+        #                                             self._phis[self._i][self._i],
+        #                                             &#39;pixel&#39;)[0,0]
+        #     self._phis[self._i - 1] = None
+        # self._resi_deform.append(self.residuals.clone())
+
+
+    def _update_image_Eulerian_(self):
+        self.image =  self._image_Eulerian_integrator_(self.image,self.field,1/self.n_step,1)
+        self.image = self.image + (self.momentum * self.mu) / self.n_step
+
+    def _update_image_semiLagrangian_(self,deformation,residuals = None,sharp=False):
+        if residuals is None: residuals = self.momentum
+        image = self.source if sharp else self.image
+        self.image = tb.imgDeform(image,deformation,dx_convention=&#39;pixel&#39;)
+        if self._get_mu_() != 0: self.image += (residuals *self.mu)/self.n_step
+
+    def _update_sharp_intermediary_field_(self):
+        # print(&#39;update phi &#39;,self._i,self._phis[self._i])
+        self._phis[self._i][self._i] = self.id_grid - self.field/self.n_step
+        if self._i &gt; 0:
+            for k,phi in enumerate(self._phis[self._i - 1]):
+                self._phis[self._i][k] = phi + tb.compose_fields(
+                    -self.field/self.n_step,phi,&#39;pixel&#39;
+                ).to(self.field.device)
+                # self._phis[self._i][k] = tb.compose_fields(
+                #     phi,
+                #     self._phis[self._i][self._i],
+                #     # self.field/self.n_step,
+                #     &#39;pixel&#39;
+                # ).to(self.field.device)
+
+    def _update_momentum_weighted_semiLagrangian_(self, deformation):
+        f_t = self.rf.f(self._i)
+        fz_times_div_v = f_t * self.momentum * tb.Field_divergence(dx_convention=&#39;pixel&#39;)(self.field)[0, 0]
+        div_fzv = -tb.imgDeform(f_t * self.momentum,
+                                deformation,
+                                dx_convention=&#39;pixel&#39;,
+                                clamp=False)[0, 0] \
+                  + fz_times_div_v / self.n_step
+        z_time_dtF = self.momentum * self.rf.dt_F(self._i)
+        self.momentum = - (div_fzv + z_time_dtF) / f_t
+
+    def _update_image_weighted_semiLagrangian_(self, deformation,residuals = None,sharp=False):
+        if residuals is None: residuals = self.momentum
+        image = self.source if sharp else self.image
+        self.image = tb.imgDeform(image, deformation, dx_convention=&#39;pixel&#39;) + \
+                     (self.rf.F_div_f(self._i) *  residuals) / self.n_step
+
+                     # (self.rf.mu * self.rf.mask[self._i] * residuals) / self.n_step
+
+        # ga = (self.rf.mask[self._i] * self.residuals) / self.n_step
+        # plt.figure()
+        # p = plt.imshow(ga[0])
+        # plt.colorbar(p)
+        # plt.show()
+
+    def _update_field_oriented_weighted_(self):
+        grad_image = tb.spacialGradient(self.image, dx_convention=&#39;pixel&#39;)
+        if self.flag_W:
+            free_field = tb.im2grid(
+                # self.kernelOperator((- self.rf.f(self._i) * self.residuals * grad_image[0]))
+                (- self.rf.f(self._i) * self.momentum * grad_image[0])
+            )/self._get_mu_()
+        else:
+            free_field = self._compute_vectorField_(self.momentum, grad_image)
+            free_field *= self._field_cst_mult()
+        oriented_field = 0
+        if self.flag_O:
+            mask_i = self.orienting_mask[self._i][..., None].clone()
+            free_field *= 1 / (1 + (self.gamma * mask_i))
+
+            oriented_field = self.orienting_field[self._i][None].clone()
+            oriented_field *= (self.gamma * mask_i) / (1 + (self.gamma * mask_i))
+
+
+        # self.field = free_field + oriented_field
+        self.field = tb.im2grid(self.kernelOperator(tb.grid2im(free_field + oriented_field)))
+
+
+    def get_deformation(self,n_step=None,save=False):
+        r&#34;&#34;&#34;Returns the deformation use it for showing results
+        $\Phi = \int_0^1 v_t dt$
+
+        :return: deformation [1,H,W,2] or [2,H,W,D,3]
+        &#34;&#34;&#34;
+        if n_step == 0:
+            return self.id_grid.detach().cpu() + self.field_stock[0][None].detach().cpu()/self.n_step
+        temporal_integrator = vff.FieldIntegrator(method=&#39;temporal&#39;,save=save)
+        if n_step is None:
+            return temporal_integrator(self.field_stock/self.n_step,forward=True)
+        else:
+            return temporal_integrator(self.field_stock[:n_step]/self.n_step,forward=True)
+
+    def get_deformator(self,n_step=None,save = False):
+        r&#34;&#34;&#34;Returns the inverse deformation use it for deforming images
+        $\Phi^{-1}$
+
+        :return: deformation [T,H,W,2] or [T,H,W,D,3]
+        &#34;&#34;&#34;
+        if n_step == 0:
+            return self.id_grid.detach().cpu()-self.field_stock[0][None].detach().cpu()/self.n_step
+        temporal_integrator = vff.FieldIntegrator(method=&#39;temporal&#39;,save=save)
+        if n_step is None:
+            return temporal_integrator(self.field_stock/self.n_step,forward=False)
+        else:
+            return temporal_integrator(self.field_stock[:n_step]/self.n_step,forward=False)
+
+    # ==================================================================
+    #                       PLOTS
+    # ==================================================================
+
+    def plot(self,n_figs=5):
+        if n_figs ==-1:
+            n_figs = self.n_step
+        plot_id = torch.quantile(torch.arange(self.image_stock.shape[0],dtype=torch.float),
+                                 torch.linspace(0,1,n_figs)).round().int()
+
+
+        kw_image_args = dict(cmap=&#39;gray&#39;,
+                      extent=[-1,1,-1,1],
+                      origin=&#39;lower&#39;,
+                      vmin=0,vmax=1)
+        # v_abs_max = (self.residuals_stock.abs().max()).max()
+        v_abs_max = torch.quantile(self.momentum.abs(), .99)
+        kw_residuals_args = dict(cmap=&#39;RdYlBu_r&#39;,
+                      extent=[-1,1,-1,1],
+                      origin=&#39;lower&#39;,
+                      vmin=-v_abs_max,
+                      vmax=v_abs_max)
+        size_fig = 5
+        C = self.momentum_stock.shape[1]
+        plt.rcParams[&#39;figure.figsize&#39;] = [size_fig*3,n_figs*size_fig]
+        fig,ax = plt.subplots(n_figs,2 + C)
+
+        for i,t in enumerate(plot_id):
+            i_s =ax[i,0].imshow(self.image_stock[t,:,:,:].detach().permute(1,2,0).numpy(),
+                                **kw_image_args)
+            ax[i,0].set_title(&#34;t = &#34;+str((t/(self.n_step-1)).item())[:3])
+            ax[i,0].axis(&#39;off&#39;)
+            fig.colorbar(i_s,ax=ax[i,0],fraction=0.046, pad=0.04)
+
+            for j in range(C):
+                r_s =ax[i,j+1].imshow(self.momentum_stock[t,j].detach().numpy(),
+                                      **kw_residuals_args)
+                ax[i,j+1].axis(&#39;off&#39;)
+
+            fig.colorbar(r_s,ax=ax[i,-2],fraction=0.046, pad=0.04)
+
+            tb.gridDef_plot_2d(self.get_deformation(t),
+                            add_grid=True,
+                            ax=ax[i,-1],
+                            step=int(min(self.field_stock.shape[2:-1])/30),
+                            check_diffeo=True)
+
+        return fig,ax
+
+    def plot_deform(self,target,temporal_nfig = 0):
+
+        if self.save == False:
+            raise TypeError(&#34;metamophosis_path.forward attribute &#39;save&#39; has to be True to use self.plot_deform&#34;)
+
+        temporal = (temporal_nfig&gt;0)
+        # temporal integration over v_t
+        temporal_integrator = vff.FieldIntegrator(method=&#39;temporal&#39;,
+                                                  save=temporal,
+                                                  dx_convention=&#39;pixel&#39;)
+
+
+        # field_stock_toplot = tb.pixel2square_convention(self.field_stock)
+        # tb.gridDef_plot(field_stock_toplot[-1][None],dx_convention=&#39;2square&#39;)
+        if temporal:
+            full_deformation_t = temporal_integrator(self.field_stock/self.n_step,
+                                                     forward=True)
+            full_deformator_t = temporal_integrator(self.field_stock/self.n_step,
+                                                    forward=False)
+            full_deformation = full_deformation_t[-1].unsqueeze(0)
+            full_deformator = full_deformator_t[-1].unsqueeze(0)
+        else:
+            full_deformation = temporal_integrator(self.field_stock/self.n_step,
+                                                   forward=True)
+            full_deformator = temporal_integrator(self.field_stock/self.n_step,
+                                                  forward=False)
+
+        fig , axes = plt.subplots(3,2, constrained_layout=True,figsize=(20,30))
+        # show resulting deformation
+
+        tb.gridDef_plot_2d(full_deformation,step=int(max(self.image.shape)/30),ax = axes[0,0],
+                         check_diffeo=True,dx_convention=&#39;2square&#39;)
+        tb.quiver_plot(full_deformation -self.id_grid.cpu() ,step=int(max(self.image.shape)/30),
+                        ax = axes[0,1],check_diffeo=False)
+
+        # show S deformed by full_deformation
+        S_deformed = tb.imgDeform(self.source.cpu(),full_deformator,
+                                  dx_convention=&#39;pixel&#39;)
+        # axes[1,0].imshow(self.source[0,0,:,:].cpu().permute(1,2,0),cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        # axes[1,1].imshow(target[0].cpu().permute(1,2,0),cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        # axes[2,0].imshow(S_deformed[0,0,:,:].permute(1,2,0),cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        # axes[2,1].imshow(tb.imCmp(target,S_deformed),origin=&#39;lower&#39;,vmin=0,vmax=1)
+
+        axes[1,0].imshow(self.source[0,0,:,:].cpu(),cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        axes[1,1].imshow(target[0,0].cpu(),cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        axes[2,0].imshow(S_deformed[0,0,:,:],cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        axes[2,1].imshow(
+            tb.imCmp(
+                target[:,0][None],
+                S_deformed[:,0][None],
+                method=&#39;compose&#39;
+            ),origin=&#39;lower&#39;,vmin=0,vmax=1)
+
+        set_ticks_off(axes)
+        if temporal:
+            t_max = full_deformator_t.shape[0]
+            plot_id = torch.quantile(torch.arange(t_max,dtype=torch.float),
+                                 torch.linspace(0,1,temporal_nfig)).round().int()
+            size_fig = 5
+            plt.rcParams[&#39;figure.figsize&#39;] = [size_fig,temporal_nfig*size_fig]
+            fig,ax = plt.subplots(temporal_nfig)
+
+            for i,t in enumerate(plot_id):
+                tb.quiver_plot(full_deformation_t[i].unsqueeze(0) - self.id_grid ,
+                               step=10,ax=ax[i])
+                tb.gridDef_plot(full_deformation_t[i].unsqueeze(0),
+                                add_grid=False,step=10,ax=ax[i],color=&#39;green&#39;)
+
+                tb.quiver_plot(self.field_stock[i].unsqueeze(0),
+                               step=10,ax=ax[i],color=&#39;red&#39;)
+
+
+    def save_to_gif(self,object,file_name,folder=None,delay=40,
+                    clean= True):
+
+        # prepare list of object
+        if &#39;image&#39; in object and &#39;deformation&#39; in object:
+            image_list_for_gif = []
+            image_kw = dict()
+            for n in range(self.n_step):
+                deformation = self.get_deformation(n).cpu()
+                img = self.image_stock[n,0].cpu().numpy()
+                fig,ax = plt.subplots()
+                ax.imshow(img,**DLT_KW_IMAGE)
+                tb.gridDef_plot_2d(deformation,ax=ax,
+                           step=10,
+                           # color=&#39;#FFC759&#39;,
+                           color=&#39;#E5BB5F&#39;,
+                           linewidth=3
+                           )
+                image_list_for_gif.append(fig_to_image(fig,ax))
+            plt.close(fig)
+
+        elif (&#39;image&#39; in object or &#39;I&#39;in object) and &#39;quiver&#39; in object:
+            image_list_for_gif = []
+            for n in range(self.n_step):
+                deformation = self.get_deformation(n).cpu()
+                if n != 0:
+                    deformation -= self.id_grid.cpu()
+                img = self.image_stock[n,0].cpu().numpy()
+                fig,ax = plt.subplots()
+                ax.imshow(img,**DLT_KW_IMAGE)
+                tb.quiver_plot(deformation,ax=ax,
+                           step=10,
+                           color=&#39;#E5BB5F&#39;,
+                           )
+                image_list_for_gif.append(fig_to_image(fig,ax))
+            image_kw = dict()
+            plt.close(fig)
+        elif &#39;image&#39; in object or &#39;I&#39; in object:
+            image_list_for_gif = [I[0].numpy() for I in self.image_stock]
+            image_kw = DLT_KW_IMAGE
+        elif &#39;residual&#39; in object or &#34;z&#34; in object:
+            image_list_for_gif = [z[0].numpy() for z in self.momentum_stock]
+            #image_kw = DLT_KW_RESIDUALS
+            image_kw = dict(cmap=&#39;RdYlBu_r&#39;, origin=&#39;lower&#39;,
+                            vmin=self.momentum_stock.min(), vmax=self.momentum_stock.max())
+        elif &#39;deformation&#39; in object:
+            image_list_for_gif = []
+            for n in range(self.n_step):
+                deformation = self.get_deformation(n).cpu()
+                if n == 0:
+                    deformation += self.id_grid.cpu()
+                fig,ax = plt.subplots()
+                tb.gridDef_plot_2d(deformation,ax=ax,
+                           step=10,
+                           color=&#39;black&#39;,
+                           # color=&#39;#E5BB5F&#39;,
+                           linewidth=5
+                           )
+                image_list_for_gif.append(fig_to_image(fig,ax))
+            image_kw = dict()
+            plt.close(fig)
+        elif &#39;quiver&#39; in object:
+            image_list_for_gif = []
+            for n in range(self.n_step):
+                deformation = self.get_deformation(n).cpu()
+                if n != 0:
+                    deformation -= self.id_grid.cpu()
+                fig,ax = plt.subplots()
+                tb.quiver_plot(deformation,ax=ax,
+                           step=10,
+                           color=&#39;black&#39;,
+                           )
+                image_list_for_gif.append(fig_to_image(fig,ax))
+            image_kw = dict()
+            plt.close(fig)
+        else:
+            raise ValueError(&#34;object must be a string containing at least&#34;
+                             &#34;one of the following : `image`,`residual`,`deformation`.&#34;)
+
+        path,im = save_gif_with_plt(image_list_for_gif,file_name,folder,
+                                    duplicate=True,image_args=image_kw,verbose=True,
+                                    delay=delay,
+                                    clean=clean)
+        return path,im</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="demeter.metamorphosis.classic.Metamorphosis_integrator" href="classic.html#demeter.metamorphosis.classic.Metamorphosis_integrator">Metamorphosis_integrator</a></li>
+<li><a title="demeter.metamorphosis.constrained.ConstrainedMetamorphosis_integrator" href="constrained.html#demeter.metamorphosis.constrained.ConstrainedMetamorphosis_integrator">ConstrainedMetamorphosis_integrator</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, image, momentum_ini, field_ini=None, save=True, plot=0, t_max=1, verbose=False, sharp=None, debug=False) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method is doing the temporal loop using the good method <code>_step_</code></p>
+<p>:param image: (tensor array) of shape [1,1,H,W]. Source image ($I_0$)
+:param field_ini: to be deprecated, field_ini is id_grid
+:param momentum_ini: (tensor array) of shape [H,W]. note that for images
+the momentum is equal to the residual ($p = z$)
+:param save: (bool) option to save the integration intermediary steps.
+:param plot: (int) positive int lower than <code>self.n_step</code> to plot the indicated
+number of intemediary steps. (if plot&gt;0, save is set to True)</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.get_deformation"><code class="name flex">
+<span>def <span class="ident">get_deformation</span></span>(<span>self, n_step=None, save=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the deformation use it for showing results
+$\Phi = \int_0^1 v_t dt$</p>
+<p>:return: deformation [1,H,W,2] or [2,H,W,D,3]</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.get_deformator"><code class="name flex">
+<span>def <span class="ident">get_deformator</span></span>(<span>self, n_step=None, save=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the inverse deformation use it for deforming images
+$\Phi^{-1}$</p>
+<p>:return: deformation [T,H,W,2] or [T,H,W,D,3]</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.plot"><code class="name flex">
+<span>def <span class="ident">plot</span></span>(<span>self, n_figs=5)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.plot_deform"><code class="name flex">
+<span>def <span class="ident">plot_deform</span></span>(<span>self, target, temporal_nfig=0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.save_to_gif"><code class="name flex">
+<span>def <span class="ident">save_to_gif</span></span>(<span>self, object, file_name, folder=None, delay=40, clean=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Geodesic_integrator.step"><code class="name flex">
+<span>def <span class="ident">step</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting"><code class="flex name class">
+<span>class <span class="ident">Optimize_geodesicShooting</span></span>
+<span>(</span><span>source: torch.Tensor, target: torch.Tensor, geodesic: <a title="demeter.metamorphosis.abstract.Geodesic_integrator" href="#demeter.metamorphosis.abstract.Geodesic_integrator">Geodesic_integrator</a>, cost_cst, data_term=None, optimizer_method: str = 'grad_descent')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Abstract method for geodesic shooting optimisation. It needs to be provided with an object
+inheriting from Geodesic_integrator</p>
+<p>Important note to potential forks : all childs of this method
+must have the same <strong>init</strong> method for proper loading.
+:param source:
+:param target:
+:param geodesic:
+:param cost_cst:
+:param optimizer_method:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Optimize_geodesicShooting(torch.nn.Module,ABC):
+    &#34;&#34;&#34; Abstract method for geodesic shooting optimisation. It needs to be provided with an object
+    inheriting from Geodesic_integrator
+    &#34;&#34;&#34;
+    @abstractmethod
+    def __init__(self,source : torch.Tensor,
+                     target : torch.Tensor,
+                     geodesic : Geodesic_integrator,
+                     cost_cst,
+                     data_term = None,
+                     optimizer_method : str = &#39;grad_descent&#39;
+                 ):
+        &#34;&#34;&#34;
+
+        Important note to potential forks : all childs of this method
+        must have the same __init__ method for proper loading.
+        :param source:
+        :param target:
+        :param geodesic:
+        :param cost_cst:
+        :param optimizer_method:
+        &#34;&#34;&#34;
+        super().__init__()
+        self.mp = geodesic
+        self.source = source
+        self.target = target
+        if isinstance(self.mp.sigma_v, tuple) and len(self.mp.sigma_v) != len(source.shape[2:]) :
+            raise ValueError(f&#34;Geodesic integrator :{self.mp.__class__.__name__}&#34;
+                             f&#34;was initialised to be {len(self.mp.sigma_v)}D&#34;
+                             f&#34; with sigma_v = {self.mp.sigma_v} and got image &#34;
+                             f&#34;source.size() = {source.shape}&#34;
+                             )
+
+        self.cost_cst = cost_cst
+        # optimize on the cost as defined in the 2021 paper.
+        self._cost_saving_ = self._default_cost_saving_
+
+        self.optimizer_method_name = optimizer_method #for __repr__
+        # forward function choice among developed optimizers
+        if optimizer_method == &#39;grad_descent&#39;:
+            self._initialize_optimizer_ = self._initialize_grad_descent_
+            self._step_optimizer_ = self._step_grad_descent_
+        elif optimizer_method == &#39;LBFGS_torch&#39;:
+            self._initialize_optimizer_ = self._initialize_LBFGS_
+            self._step_optimizer_ = self._step_LBFGS_
+        elif optimizer_method == &#39;adadelta&#39;:
+            self._initialize_optimizer_ = self._initialize_adadelta_
+            self._step_optimizer_ = self._step_adadelta_
+        else:
+            raise ValueError(
+                &#34;\noptimizer_method is &#34; + optimizer_method +
+                &#34;You have to specify the optimizer_method used among&#34;
+                &#34;{&#39;grad_descent&#39;, &#39;LBFGS_torch&#39;,&#39;adadelta&#39;}&#34;
+                             )
+
+        self.data_term = dt.Ssd(self.target) if data_term is None else data_term
+        self.data_term.set_optimizer(self)
+        # print(&#34;data_term : &#34;,self.data_term)
+        # self.temporal_integrator = vff.FieldIntegrator(method=&#39;temporal&#39;,save=False)
+        self.is_DICE_cmp = False # Is dice alredy computed ?
+        self._plot_forward_ = self._plot_forward_dlt_
+
+        # # Default parameters to save (write to file)
+        # self.field_to_save = FIELD_TO_SAVE
+    # @abstractmethod
+    # def _compute_V_norm_(self,*args):
+    #     pass
+    def _compute_V_norm_(self,*args):
+        &#34;&#34;&#34;
+
+        usage 1: _compute_V_norm_(field)
+            :field: torch Tensor of shape [1,H,W,2] or [1,D,H,W,3]
+        usage 2: _compute_V_norm_(residual, image)
+            :residual: torch Tensor of shape [1,C,H,W] or [1,C,D,H,W]
+            :image: torch Tensor of shape [1,C,H,W] or [1,C,D,H,W]
+        :return: float
+        &#34;&#34;&#34;
+
+        # Computes only
+        if len(args) == 2 and not args[0].shape[-1] in [2,3] :
+            residual, image = args[0],args[1]
+            C = residual.shape[1]
+            grad_source = tb.spacialGradient(image)
+            grad_source_resi = (grad_source * residual.unsqueeze(2)).sum(dim=1) #/ C
+            K_grad_source_resi = self.mp.kernelOperator(grad_source_resi)
+
+            return (grad_source_resi * K_grad_source_resi).sum()
+        elif len(args) == 1 and args[0].shape[-1] in [2,3]:
+            print(&#34;\n Warning !!!!  make sure that kernelOrerator is self adjoint.&#34;)
+            raise ValueError(&#34;This method to compute the V norm is wrong&#34;
+                             &#34; with gaussian Kernels&#34;)
+            field = args[0]
+            k_field = self.mp.kernelOperator(field)
+            return (k_field * field).sum()
+        else:
+            raise ValueError(f&#34;Bad arguments, see usage in Doc got args = {args}&#34;)
+
+
+    @abstractmethod
+    def cost(self,residual_ini):
+        pass
+
+
+    @abstractmethod
+    def _get_mu_(self):
+        pass
+
+    @abstractmethod
+    def _get_rho_(self):
+        pass
+
+    @abstractmethod
+    def get_all_parameters(self):
+        pass
+
+    def get_geodesic_distance(self,only_zero = False):
+        if only_zero:
+            return float(self._compute_V_norm_(
+                self.to_analyse[0],
+                self.source
+            ))
+        else:
+            dist = float(self._compute_V_norm_(
+                    self.mp.momentum_stock[0][None],
+                    self.mp.source
+                ))
+            for t in range(self.mp.momentum_stock.shape[0] - 1):
+                dist += float(self._compute_V_norm_(
+                    self.mp.momentum_stock[t + 1][None],
+                    self.mp.image_stock[t][None]
+                ))
+            return dist
+
+    def __repr__(self) -&gt; str:
+        return self.__class__.__name__ +\
+            &#39;(cost_parameters : {\n\t\tmu =&#39;+ str(self._get_mu_())     +\
+            &#39;, \n\t\trho =&#39;+str(self._get_rho_()) +\
+            &#39;, \n\t\tlambda =&#39; + str(self.cost_cst)+&#39;\n\t},&#39;+\
+            f&#39;\n\tgeodesic integrator : &#39;+ self.mp.__repr__()+\
+            f&#39;\n\tintegration method : &#39;+      self.mp.step.__name__ +\
+            f&#39;\n\toptimisation method : &#39;+ self.optimizer_method_name+\
+            f&#39;\n\t# geodesic steps =&#39; +      str(self.mp.n_step) + &#39;\n)&#39;
+
+    # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    #   Implemented OPTIMIZERS
+    # GRADIENT DESCENT
+    def _initialize_grad_descent_(self,dt_step,max_iter=20):
+        self.optimizer = GradientDescent(self.cost,self.parameter,lr=dt_step)
+
+    def _step_grad_descent_(self):
+        self.optimizer.step(verbose=False)
+
+
+
+    # LBFGS
+    def _initialize_LBFGS_(self,dt_step,max_iter = 20):
+        self.optimizer = torch.optim.LBFGS([self.parameter],
+                                           max_eval=15,
+                                           max_iter=max_iter,
+                                           lr=dt_step)
+
+        def closure():
+            self.optimizer.zero_grad()
+            L = self.cost(self.parameter)
+            #save best cms
+            # if(self._it_count &gt;1 and L &lt; self._loss_stock[:self._it_count].min()):
+            #     cms_tosave.data = self.cms_ini.detach().data
+            L.backward()
+            return L
+        self.closure = closure
+
+    def _step_LBFGS_(self):
+        self.optimizer.step(self.closure)
+
+    def _initialize_adadelta_(self,dt_step,max_iter=None):
+        self.optimizer = torch.optim.Adadelta([self.parameter],
+                                              lr=dt_step,
+                                              rho=0.9,
+                                              weight_decay=0)
+
+        def closure():
+            self.optimizer.zero_grad()
+            L = self.cost(self.parameter)
+            #save best cms
+            # if(self._it_count &gt;1 and L &lt; self._loss_stock[:self._it_count].min()):
+            #     cms_tosave.data = self.cms_ini.detach().data
+            L.backward()
+            return L
+        self.closure = closure
+
+    def _step_adadelta_(self):
+        self.optimizer.step(self.closure)
+    # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    def _default_cost_saving_(self,i,loss_stock):
+        &#34;&#34;&#34;
+
+        :param i: index for saving the according values
+                !!! if `loss_stock` is None, `loss_stock` will be initialized, and
+                `i` must have the value of the number of iterations.
+        :param loss_stock:
+        :return: updated `loss_stock`
+        &#34;&#34;&#34;
+        #initialise loss_stock
+        if loss_stock is None:
+            d = 3 if self._get_mu_() != 0 else 2
+            return torch.zeros((i,d))
+        if self._get_mu_() != 0: # metamophosis
+            loss_stock[i,0] = self.data_loss.detach()
+            loss_stock[i,1] = self.norm_v_2.detach()
+            loss_stock[i,2] = self.norm_l2_on_z.detach()
+        else: #LDDMM
+            loss_stock[i,0] = self.data_loss.detach()
+            loss_stock[i,1] = self.norm_v_2.detach()
+        return loss_stock
+
+    def _plot_forward_dlt_(self):
+        plt.figure()
+        plt.imshow(self.mp.image[0,0].detach().cpu(),**DLT_KW_IMAGE)
+        plt.show()
+
+    @time_it
+    def forward(self,
+                z_0,
+                n_iter = 10,
+                grad_coef = 1e-3,
+                verbose= True,
+                plot=False,
+                sharp=None
+                ):
+        r&#34;&#34;&#34; The function is and perform the optimisation with the desired method.
+        The result is stored in the tuple self.to_analyse with two elements. First element is the optimized
+        initial residual ($z_O$ in the article) used for the shooting.
+        The second is a tensor with the values of the loss norms over time. The function
+        plot_cost() is designed to show them automatically.
+
+        :param z_0: initial residual. It is the variable on which we optimize.
+        `require_grad` must be set to True.
+        :param n_iter: (int) number of optimizer iterations
+        :param verbose: (bool) display advancement
+
+        &#34;&#34;&#34;
+        self.source = self.source.to(z_0.device)
+        self.target = self.target.to(z_0.device)
+        # self.mp.kernelOperator.kernel = self.mp.kernelOperator.kernel.to(z_0.device)
+        self.data_term.to_device(z_0.device)
+
+        self.parameter = z_0 # optimized variable
+        self._initialize_optimizer_(grad_coef,max_iter=n_iter)
+
+        self.id_grid = tb.make_regular_grid(z_0.shape[2:],z_0.device)
+        if self.id_grid is None:
+            raise ValueError(f&#34;The initial momentum provided might have the wrong shape, got :{z_0.shape}&#34;)
+
+        self.cost(self.parameter)
+
+        loss_stock = self._cost_saving_(n_iter,None) # initialisation
+        loss_stock = self._cost_saving_(0,loss_stock)
+
+        for i in range(1,n_iter):
+            # print(&#34;\n&#34;,i,&#34;==========================&#34;)
+            self._step_optimizer_()
+            loss_stock = self._cost_saving_(i,loss_stock)
+
+            if verbose:
+                update_progress((i+1)/n_iter,message=(&#39;ssd : &#39;,loss_stock[i,0]))
+            if plot and i in [n_iter//4,n_iter//2,3*n_iter//4]:
+                self._plot_forward_()
+
+
+        # for future plots compute shooting with save = True
+        self.mp.forward(self.source.clone(),
+                        self.parameter.detach().clone(),
+                        save=True,
+                        plot=0)
+
+        self.to_analyse = (self.parameter.detach(),loss_stock)
+        self.to_device(&#39;cpu&#39;)
+
+    def to_device(self,device):
+        # self.mp.kernelOperator.kernel = self.mp.kernelOperator.kernel.to(device)
+        self.source = self.source.to(device)
+        self.target = self.target.to(device)
+        self.parameter = self.parameter.to(device)
+        self.id_grid = self.id_grid.to(device)
+        self.data_term.to_device(device)
+        self.to_analyse = (self.to_analyse[0].to(device),
+                           self.to_analyse[1].to(device))
+
+    def forward_safe_mode(self,
+                          z_0,
+                          n_iter = 10,
+                          grad_coef = 1e-3,
+                          verbose= True,
+                          mode=None
+                          ):
+        &#34;&#34;&#34; Same as Optimize_geodesicShooting.forward(...) but
+        does not stop the program when the integration diverges.
+        If mode is not None, it tries to change the parameter
+        until convergence as described in ```mode```
+
+        :param z_0: initial residual. It is the variable on which we optimize.
+        `require_grad` must be set to True.
+        :param n_iter: (int) number of optimizer iterations
+        :param verbose: (bool) display advancement
+        :param mode:
+            `&#39;grad_coef&#39;` this mode will decrease the grad_coef by
+            dividing it by 10.
+        :return:
+        &#34;&#34;&#34;
+        try:
+            self.forward(z_0,n_iter,grad_coef,verbose=verbose)
+        except OverflowError:
+            if mode is None:
+                print(&#34;Integration diverged : Stop.\n\n&#34;)
+                self.to_analyse= &#39;Integration diverged&#39;
+            elif mode == &#34;grad_coef&#34;:
+                print(f&#34;Integration diverged :&#34;
+                      f&#34; set grad_coef to {grad_coef*0.1}&#34;)
+                self.forward_safe_mode(z_0,n_iter,grad_coef*0.1,verbose,mode=mode)
+
+    def compute_landmark_dist(self,source_landmark,target_landmark=None,forward=True,verbose=True):
+        # from scipy.interpolate import interpn
+        # import numpy as np
+        # compute deformed landmarks
+        if forward:
+            deformation = self.mp.get_deformation()
+        else: deformation = self.mp.get_deformator()
+        deform_landmark = []
+        for l in source_landmark:
+            idx =  (0,) + tuple([int(j) for j in l.flip(0)])
+            deform_landmark.append(deformation[idx].tolist())
+
+        def land_dist(land_1,land_2):
+            print(f&#34;land type : {land_1.dtype}, {land_2.dtype}&#34;)
+            try: # caused by applying .round() on an int tensor
+                return (
+                    (land_1 - land_2.round()).abs()
+                ).sum()/source_landmark.shape[0]
+            except RuntimeError:
+                return (
+                    (land_1 - land_2).abs()
+                ).sum()/source_landmark.shape[0]
+
+
+        self.source_landmark = source_landmark
+        self.target_landmark = target_landmark
+        self.deform_landmark = torch.Tensor(deform_landmark)
+        if target_landmark is None:
+            return self.deform_landmark
+        self.landmark_dist = land_dist(target_landmark,self.deform_landmark)
+        dist_source_target = land_dist(target_landmark,source_landmark)
+        print(f&#34;Landmarks:\n\tBefore : {dist_source_target}\n\tAfter : {self.landmark_dist}&#34;)
+        return self.deform_landmark, self.landmark_dist,dist_source_target
+
+    def get_landmark_dist(self):
+        try:
+            return float(self.landmark_dist)
+        except AttributeError:
+            return &#39;not computed&#39;
+
+    def compute_DICE(self,source_segmentation,target_segmentation,plot=False,forward=True):
+        &#34;&#34;&#34; Compute the DICE score of a regristration. Given the segmentations of
+        a structure  (ex: ventricules) that should be present in both source and target image.
+        it gives a score close to one if the segmentations are well matching after transformation.
+
+
+        :param source_segmentation: Tensor of source size?
+        :param target_segmentation:
+        :return: (float) DICE score.
+        &#34;&#34;&#34;
+        # TODO : make the computation
+        self.is_DICE_cmp = True
+        deformator = self.mp.get_deformator() if forward else self.mp.get_deformation()
+        device = source_segmentation.device
+        if len(source_segmentation.shape) == 2 or (len(source_segmentation.shape))==3:
+            source_segmentation = source_segmentation[None,None]
+        source_deformed = tb.imgDeform(source_segmentation,deformator.to(device),
+                                       dx_convention=&#39;pixel&#39;)
+        # source_deformed[source_deformed&gt;1e-2] =1
+        # prod_seg = source_deformed * target_segmentation
+        # sum_seg = source_deformed + target_segmentation
+        #
+        # self.dice = 2*prod_seg.sum() / sum_seg.sum()
+        self.dice = tb.dice(source_deformed,target_segmentation)
+        if plot:
+            fig,ax = plt.subplots()
+            ax.imshow(tb.imCmp(target_segmentation,source_deformed))
+            plt.show()
+        return self.dice, source_deformed
+
+    def get_DICE(self):
+        # if self.is_DICE_cmp :
+        #     return self.DICE
+        # else:
+        try:
+            return self.dice
+        except AttributeError:
+            return &#39;not computed&#39;
+
+
+    def get_ssd_def(self):
+        image_def = tb.imgDeform(self.source,self.mp.get_deformator(),dx_convention=&#39;pixel&#39;)
+        return float(cf.SumSquaredDifference(self.target)(image_def))
+
+    def save(self,source_name,target_name,light_save = False,message=None,destination=None,file=None):
+        &#34;&#34;&#34; Save an optimisation to be later loaded and write all sort of info
+        in a csv file
+
+        :param source_name: (str) will appear in the file name
+        :param target_name: (str) will appear in the file name
+        :param light_save: (bool) if True, only the initial momentum is saved.
+        If False all data, integration, source and target are saved. Setting it to True
+        save a lot of space on the disk, but you might not be able to get the whole
+        registration back if the source image is different or the code used for
+        computing it changed for any reason.
+        :param message: (str) will appear in the csv storing all data
+        :param destination: path of the folder to store the csvfile overview
+        :param file:
+        :return:
+        &#34;&#34;&#34;
+        if self.to_analyse == &#39;Integration diverged&#39;:
+            print(&#34;Can&#39;t save optimisation that didn&#39;t converged&#34;)
+            return 0
+        self.to_device(&#39;cpu&#39;)
+        path = OPTIM_SAVE_DIR
+        ic(path)
+        date_time = datetime.now()
+        if type(self.mp.sigma_v) is list: n_dim = &#39;2D&#39; if len(self.mp.sigma_v[0]) ==2 else &#39;3D&#39;
+        else: n_dim = &#39;2D&#39; if len(self.mp.sigma_v) ==2 else &#39;3D&#39;
+        id_num = 0
+
+
+        # build file name
+        def file_name_maker_(id_num):
+            return n_dim+date_time.strftime(&#34;_%d_%m_%Y&#34;)+&#39;_&#39;+\
+                    source_name+&#39;_to_&#39;+target_name+&#39;_{:03d}&#39;.format(id_num)+\
+                    &#39;.pk1&#39;
+        file_name = file_name_maker_(id_num)
+        while file_name in os.listdir(path):
+            id_num+=1
+            file_name = file_name_maker_(id_num)
+
+
+        state_dict = fill_saves_overview._optim_to_state_dict_(self,file_name,
+                dict(
+                    time = date_time.strftime(&#34;%d/%m/%Y %H:%M:%S&#34;),
+                    saved_file_name=&#39;&#39;, # Petit hack pour me simplifier la vie.
+                    source = source_name,
+                    target = target_name,
+                    n_dim = n_dim
+                ),
+                message=message
+        )
+        fill_saves_overview._write_dict_to_csv(state_dict,path=destination,csv_file=file)
+
+
+        #=================
+        # save the data
+        # copy and clean dictonary containing all values
+        dict_copy = {}
+        dict_copy[&#39;light_save&#39;] = light_save
+        dict_copy[&#39;__repr__&#39;] = self.__repr__()
+        for k in FIELD_TO_SAVE:
+            dict_copy[k] = self.__dict__.get(k)
+            if torch.is_tensor(dict_copy[k]):
+                dict_copy[k] = dict_copy[k].cpu().detach()
+        if light_save:
+            dict_copy[&#39;parameters&#39;] = self.get_all_parameters()
+        else:
+            dict_copy[&#39;mp&#39;] = self.mp # For some reason &#39;mp&#39; wasn&#39;t showing in __dict__
+
+
+        if type(self.data_term) != dt.Ssd:
+            print(&#39;\nBUG WARNING : An other data term than Ssd was detected&#39;
+                &#34;For now our method can&#39;t save it, it is ok to visualise&#34;
+                &#34;the optimisation, but be careful loading the optimisation.\n&#34;)
+        # save landmarks if they exist
+        try:
+            dict_copy[&#39;landmarks&#39;] = (self.source_landmark,self.target_landmark,self.deform_landmark)
+        except AttributeError:
+            # print(&#39;No landmark detected&#39;)
+            pass
+
+        with open(path+file_name,&#39;wb&#39;) as f:
+            pickle.dump(dict_copy,f,pickle.HIGHEST_PROTOCOL)
+        print(&#39;Optimisation saved in &#39;+path+file_name+&#39;\n&#39;)
+
+        return file_name,path
+
+
+
+    # ==================================================================
+    #                 PLOTS
+    # ==================================================================
+
+    def get_total_cost(self):
+        total_cost = self.to_analyse[1][:,0] + \
+                    self.cost_cst * self.to_analyse[1][:,1]
+        if self._get_mu_() != 0 :
+            ic(type(self._get_rho_()))
+            if type(self._get_rho_()) == float:
+                total_cost += self.cost_cst*(self._get_rho_())* self.to_analyse[1][:,2]
+            elif type(self._get_rho_()) == tuple:
+                total_cost += self.cost_cst*(self._get_rho_()[0])* self.to_analyse[1][:,2]
+        return total_cost
+
+    def plot_cost(self):
+        &#34;&#34;&#34; To display the evolution of cost during the optimisation.
+
+
+        &#34;&#34;&#34;
+        fig1,ax1 = plt.subplots(1,2,figsize=(10,5))
+
+        ssd_plot = self.to_analyse[1][:,0].numpy()
+        ax1[0].plot(ssd_plot,&#34;--&#34;,color = &#39;blue&#39;,label=&#39;ssd&#39;)
+        ax1[1].plot(ssd_plot,&#34;--&#34;,color = &#39;blue&#39;,label=&#39;ssd&#39;)
+
+        normv_plot = self.cost_cst*self.to_analyse[1][:,1].detach().numpy()
+        ax1[0].plot(normv_plot,&#34;--&#34;,color = &#39;green&#39;,label=&#39;normv&#39;)
+        ax1[1].plot(self.to_analyse[1][:,1].detach().numpy(),&#34;--&#34;,color = &#39;green&#39;,label=&#39;normv&#39;)
+        total_cost = ssd_plot +normv_plot
+        if self._get_mu_() != 0:
+            norm_l2_on_z = self.cost_cst*(self._get_rho_())* self.to_analyse[1][:,2].numpy()
+            total_cost += norm_l2_on_z
+            ax1[0].plot(norm_l2_on_z,&#34;--&#34;,color = &#39;orange&#39;,label=&#39;norm_l2_on_z&#39;)
+            ax1[1].plot(self.to_analyse[1][:,2].numpy(),&#34;--&#34;,color = &#39;orange&#39;,label=&#39;norm_l2_on_z&#39;)
+
+        ax1[0].plot(total_cost, color=&#39;black&#39;,label=r&#39;$\Sigma$&#39;)
+        ax1[0].legend()
+        ax1[1].legend()
+        ax1[0].set_title(&#34;Lambda = &#34;+str(self.cost_cst)+
+                    &#34; mu = &#34;+str(self._get_mu_()) +
+                    &#34; rho = &#34;+str(self._get_rho_()))
+
+    def plot_imgCmp(self):
+        r&#34;&#34;&#34; Display and compare the deformed image $I_1$ with the target$
+        &#34;&#34;&#34;
+        fig,ax = plt.subplots(2,2,figsize = (20,20),constrained_layout=True)
+        image_kw = dict(cmap=&#39;gray&#39;,origin=&#39;lower&#39;,vmin=0,vmax=1)
+        set_ticks_off(ax)
+        ax[0,0].imshow(self.source[0,0,:,:].detach().cpu().numpy(),
+                       **image_kw)
+        ax[0,0].set_title(&#34;source&#34;,fontsize = 25)
+        ax[0,1].imshow(self.target[0,0,:,:].detach().cpu().numpy(),
+                       **image_kw)
+        ax[0,1].set_title(&#34;target&#34;,fontsize = 25)
+
+        ax[1,1].imshow(tb.imCmp(self.target,self.mp.image.detach().cpu(),method=&#39;compose&#39;),**image_kw)
+        ax[1,1].set_title(&#34;comparaison deformed image with target&#34;,fontsize = 25)
+        ax[1,0].imshow(self.mp.image[0,0].detach().cpu().numpy(),**image_kw)
+        ax[1,0].set_title(&#34;Integrated source image&#34;,fontsize = 25)
+        tb.quiver_plot(self.mp.get_deformation()- self.mp.id_grid,
+                       ax=ax[1,1],step=15,color=GRIDDEF_YELLOW,
+                       )
+
+        text_param = f&#34;mu = {self._get_mu_()}, rho = {self.mp._get_rho_()},&#34;
+        try:
+            text_param += f&#34; gamma = {self.mp._get_gamma_()}&#34;
+        except AttributeError:
+            pass
+        ax[1,1].text(10,self.source.shape[2] - 10,text_param ,c=&#34;white&#34;,size=25)
+
+        text_score = &#34;&#34;
+        if type(self.get_DICE()) is float:
+            text_score += f&#34;dice : {self.get_DICE():.2f},&#34;
+
+        if type(self.get_landmark_dist()) is float:
+            ax[1,1].plot(self.source_landmark[:,0],self.source_landmark[:,1],**source_ldmk_kw)
+            ax[1,1].plot(self.target_landmark[:,0],self.target_landmark[:,1],**target_ldmk_kw)
+            ax[1,1].plot(self.deform_landmark[:,0],self.deform_landmark[:,1],**deform_ldmk_kw)
+            ax[1,1].quiver(self.source_landmark[:,0],self.source_landmark[:,1],
+                           self.deform_landmark[:,0]-self.source_landmark[:,0],
+                           self.deform_landmark[:,1]-self.source_landmark[:,1],
+                             color= &#34;#2E8DFA&#34;)
+            ax[1,1].legend()
+            text_score += f&#34;landmark : {self.get_landmark_dist():.2f},&#34;
+        ax[1,1].text(10,10,text_score,c=&#39;white&#39;,size=25)
+
+
+        return fig,ax
+
+    def plot_deform(self,temporal_nfigs = 0):
+        residuals = self.to_analyse[0]
+        #print(residuals.device,self.source.device)
+        self.mp.forward(self.source.clone(),residuals,save=True,plot=0)
+        self.mp.plot_deform(self.target,temporal_nfigs)
+
+    def plot(self):
+        self.plot_cost()
+        self.plot_imgCmp()
+        # self.plot_deform()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="demeter.metamorphosis.classic.Metamorphosis_Shooting" href="classic.html#demeter.metamorphosis.classic.Metamorphosis_Shooting">Metamorphosis_Shooting</a></li>
+<li><a title="demeter.metamorphosis.constrained.ConstrainedMetamorphosis_Shooting" href="constrained.html#demeter.metamorphosis.constrained.ConstrainedMetamorphosis_Shooting">ConstrainedMetamorphosis_Shooting</a></li>
+<li><a title="demeter.metamorphosis.constrained.Reduce_field_Optim" href="constrained.html#demeter.metamorphosis.constrained.Reduce_field_Optim">Reduce_field_Optim</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_DICE"><code class="name flex">
+<span>def <span class="ident">compute_DICE</span></span>(<span>self, source_segmentation, target_segmentation, plot=False, forward=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the DICE score of a regristration. Given the segmentations of
+a structure
+(ex: ventricules) that should be present in both source and target image.
+it gives a score close to one if the segmentations are well matching after transformation.</p>
+<p>:param source_segmentation: Tensor of source size?
+:param target_segmentation:
+:return: (float) DICE score.</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_landmark_dist"><code class="name flex">
+<span>def <span class="ident">compute_landmark_dist</span></span>(<span>self, source_landmark, target_landmark=None, forward=True, verbose=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.cost"><code class="name flex">
+<span>def <span class="ident">cost</span></span>(<span>self, residual_ini)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>*args, **kwargs) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward_safe_mode"><code class="name flex">
+<span>def <span class="ident">forward_safe_mode</span></span>(<span>self, z_0, n_iter=10, grad_coef=0.001, verbose=True, mode=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Same as Optimize_geodesicShooting.forward(&hellip;) but
+does not stop the program when the integration diverges.
+If mode is not None, it tries to change the parameter
+until convergence as described in <code>mode</code></p>
+<p>:param z_0: initial residual. It is the variable on which we optimize.
+<code>require_grad</code> must be set to True.
+:param n_iter: (int) number of optimizer iterations
+:param verbose: (bool) display advancement
+:param mode:
+<code>'grad_coef'</code> this mode will decrease the grad_coef by
+dividing it by 10.
+:return:</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_DICE"><code class="name flex">
+<span>def <span class="ident">get_DICE</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_all_parameters"><code class="name flex">
+<span>def <span class="ident">get_all_parameters</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_geodesic_distance"><code class="name flex">
+<span>def <span class="ident">get_geodesic_distance</span></span>(<span>self, only_zero=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_landmark_dist"><code class="name flex">
+<span>def <span class="ident">get_landmark_dist</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_ssd_def"><code class="name flex">
+<span>def <span class="ident">get_ssd_def</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_total_cost"><code class="name flex">
+<span>def <span class="ident">get_total_cost</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot"><code class="name flex">
+<span>def <span class="ident">plot</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_cost"><code class="name flex">
+<span>def <span class="ident">plot_cost</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>To display the evolution of cost during the optimisation.</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_deform"><code class="name flex">
+<span>def <span class="ident">plot_deform</span></span>(<span>self, temporal_nfigs=0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_imgCmp"><code class="name flex">
+<span>def <span class="ident">plot_imgCmp</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display and compare the deformed image $I_1$ with the target$</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self, source_name, target_name, light_save=False, message=None, destination=None, file=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save an optimisation to be later loaded and write all sort of info
+in a csv file</p>
+<p>:param source_name: (str) will appear in the file name
+:param target_name: (str) will appear in the file name
+:param light_save: (bool) if True, only the initial momentum is saved.
+If False all data, integration, source and target are saved. Setting it to True
+save a lot of space on the disk, but you might not be able to get the whole
+registration back if the source image is different or the code used for
+computing it changed for any reason.
+:param message: (str) will appear in the csv storing all data
+:param destination: path of the folder to store the csvfile overview
+:param file:
+:return:</p></div>
+</dd>
+<dt id="demeter.metamorphosis.abstract.Optimize_geodesicShooting.to_device"><code class="name flex">
+<span>def <span class="ident">to_device</span></span>(<span>self, device)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="demeter.metamorphosis" href="index.html">demeter.metamorphosis</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator" href="#demeter.metamorphosis.abstract.Geodesic_integrator">Geodesic_integrator</a></code></h4>
+<ul class="two-column">
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.forward" href="#demeter.metamorphosis.abstract.Geodesic_integrator.forward">forward</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.get_deformation" href="#demeter.metamorphosis.abstract.Geodesic_integrator.get_deformation">get_deformation</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.get_deformator" href="#demeter.metamorphosis.abstract.Geodesic_integrator.get_deformator">get_deformator</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.plot" href="#demeter.metamorphosis.abstract.Geodesic_integrator.plot">plot</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.plot_deform" href="#demeter.metamorphosis.abstract.Geodesic_integrator.plot_deform">plot_deform</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.save_to_gif" href="#demeter.metamorphosis.abstract.Geodesic_integrator.save_to_gif">save_to_gif</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Geodesic_integrator.step" href="#demeter.metamorphosis.abstract.Geodesic_integrator.step">step</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting">Optimize_geodesicShooting</a></code></h4>
+<ul class="">
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_DICE" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_DICE">compute_DICE</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_landmark_dist" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.compute_landmark_dist">compute_landmark_dist</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.cost" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.cost">cost</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward">forward</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward_safe_mode" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.forward_safe_mode">forward_safe_mode</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_DICE" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_DICE">get_DICE</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_all_parameters" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_all_parameters">get_all_parameters</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_geodesic_distance" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_geodesic_distance">get_geodesic_distance</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_landmark_dist" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_landmark_dist">get_landmark_dist</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_ssd_def" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_ssd_def">get_ssd_def</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_total_cost" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.get_total_cost">get_total_cost</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot">plot</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_cost" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_cost">plot_cost</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_deform" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_deform">plot_deform</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_imgCmp" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.plot_imgCmp">plot_imgCmp</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.save" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.save">save</a></code></li>
+<li><code><a title="demeter.metamorphosis.abstract.Optimize_geodesicShooting.to_device" href="#demeter.metamorphosis.abstract.Optimize_geodesicShooting.to_device">to_device</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
